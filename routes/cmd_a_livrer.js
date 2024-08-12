@@ -27,12 +27,12 @@ router.get('/cmd_a_livrer', authenticate, async (req, res) => {
   .from('pending_deliveries')
   .select('*')
   
-  console.log(pending_deliveries[0])
+  console.log(pending_deliveries)
   
   
 if (error)return res.status(500).json({ error: error.message });
 
-    res.render('cmd_a_livrer', { commande: pending_deliveries[0] }); 
+    res.render('cmd_a_livrer', { commande: pending_deliveries }); 
       });
   //});
 
