@@ -27,17 +27,10 @@ router.get('/cmd_a_livrer', authenticate, async (req, res) => {
   .from('pending_deliveries')
   .select('*')
   
+  console.log(pending_deliveries[0])
+  console.log(pending_deliveries)
   
-if (error) {
-        return res.status(500).json({ error: error.message });
-    }
-    console.log(pending_deliveries[0])
-    console.log(pending_deliveries)
-   
-    //const match = await bcrypt.compare(password, user.password);
-    //if (password !== user.password) return res.status(400).send('Mot de passe incorrect'); 
-     
-  
+if (error)return res.status(500).json({ error: error.message });
     res.render('cmd_a_livrer', { commande: pending_deliveries[0] }); 
       });
   //});
