@@ -15,7 +15,7 @@
     <a href="/index" id="index" >Accueil</a>
     <a href="/cmd_a_livrer" id="cmd_a_livrer" >Commande livrer</a>
 
-    <% if (commande.length > 0) { %>
+   
         <ul>
             <% commande.forEach(commande => { %>
                 <li>
@@ -31,9 +31,7 @@
                 <hr>
             <% }); %>
         </ul>
-    <% } else { %>
-        <p>No pending deliveries found.</p>
-    <% } %>
+   
     <script>
         document.addEventListener('DOMContentLoaded', () => {
       const hidenid = document.getElementById('hidenid').innerHTML;
