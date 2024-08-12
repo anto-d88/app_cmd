@@ -31,6 +31,7 @@ router.get('/cmd_a_livrer', authenticate, async (req, res) => {
   
   
 if (error)return res.status(500).json({ error: error.message });
+
     res.render('cmd_a_livrer', { commande: pending_deliveries[0] }); 
       });
   //});
