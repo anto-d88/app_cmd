@@ -32,7 +32,7 @@ if (error) {
         return res.status(500).json({ error: error.message });
     }
     console.log(delivered_orders[0])
-    console.log(delivered_orders)
+  
    
     //const match = await bcrypt.compare(password, user.password);
     //if (password !== user.password) return res.status(400).send('Mot de passe incorrect'); 
