@@ -5,10 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'accueil</title>
 </head>
-<body><% if (user) { %>
+<body>
+    <% if (user) { %> 
+        <p id="hidenid"><%= user.id %></p>
+        <% } %>
+    <% if (user) { %>
     <h1>Bienvenue , <%= user.first_name %> <%= user.last_name %>!</h1>
     <% } %>
     <a href="/cmd_a_livrer" id="cmd_a_livrer" >Commande à livrer</a>
     <a href="/cmd_livrer" id="cmd_livrer" >Commande livrer</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+      const hidenid = document.getElementById('hidenid').innerHTML;
+      const userId = hidenid ;
+      document.getElementById("hidenid").style.display = "none"
+      const userLinkhistory = document.getElementById('cmd_a_livrer');
+      userLinkhistory.href = `/cmd_a_livrer?userId=${encodeURIComponent(userId)}`;
+      const userLinkproduis = document.getElementById('cmd_livrer');
+      userLinkproduis.href = `/cmd_livrer?userId=${encodeURIComponent(userId)}`;
+    });
+        </script>
 </body>
 </html>

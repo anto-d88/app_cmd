@@ -7,6 +7,8 @@ const app = express();
 const port = 3000;
 const accueilRoutes = require('./routes/index');
 const authRoutes = require('./routes/auth');
+const cmd_a_livrerRoutes = require('./routes/cmd_a_livre');
+const cmd_livrerRoutes = require('./routes/cmd_livrer');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // configuration connection postGreSQL
@@ -25,6 +27,8 @@ app.set('views', path.join(__dirname, 'views'));
 // Route de base
 app.use(accueilRoutes);
 app.use(authRoutes);
+app.use(cmd_a_livrerRoutes);
+app.use(cmd_livrerRoutes);
 // Démarrer le serveur
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
