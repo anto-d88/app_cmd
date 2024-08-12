@@ -19,14 +19,14 @@
         <ul>
             <% commande.forEach(delivery => { %>
                 <li>
-                    Order ID: <%= delivery.order_id %><br>
-                    User ID: <%= delivery.user_id %><br>
-                    Product ID: <%= delivery.product_id %><br>
-                    Quantity: <%= delivery.quantity %><br>
-                    Total Price: €<%= delivery.total_price %><br>
-                    Order Date: <%= new Date(delivery.order_date).toLocaleString() %><br>
-                    Expected Delivery Date: <%= delivery.expected_delivery_date ? new Date(delivery.expected_delivery_date).toLocaleString() : 'N/A' %><br>
-                    Delivery Status: <%= delivery.delivery_status %><br>
+                    Order ID: <%= commande.order_id %><br>
+                    User ID: <%= commande.user_id %><br>
+                    Product ID: <%= commande.product_id %><br>
+                    Quantity: <%= commande.quantity %><br>
+                    Total Price: €<%= commande.total_price %><br>
+                    Order Date: <%= new Date(commande.order_date).toLocaleString() %><br>
+                    Expected Delivery Date: <%= commande.expected_delivery_date ? new Date(commande.expected_delivery_date).toLocaleString() : 'N/A' %><br>
+                    Delivery Status: <%= commande.delivery_status %><br>
                 </li>
                 <hr>
             <% }); %>
